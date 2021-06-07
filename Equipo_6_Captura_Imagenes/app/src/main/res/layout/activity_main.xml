@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#fccfa9"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccione una opción:"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/seleccionar_ex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar proyecto existente"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/crear_nuevo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crear nuevo proyecto"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinner_proyectos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </Spinner>
+
+        <EditText
+            android:id="@+id/nombre_proyecto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre proyecto"
+            android:inputType="textPersonName"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.7"
+        android:orientation="vertical"
+        android:background="#feccff"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cámara (Vista Previa)"
+            android:gravity="center"/>
+
+        <FrameLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <SurfaceView
+                android:id="@+id/surfaceView"
+                android:layout_width="220dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/estado_textv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado: ---"
+            android:gravity="center"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/segundos_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- seg."
+            android:gravity="center"
+            android:textSize="22sp"/>
+
+        <Button
+            android:id="@+id/start_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empezar a tomar fotos"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="- fotografías restantes"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Finaliza en: -"
+                android:gravity="center"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
+                <TableRow>
+                    <TextView
+                        android:text="Comienzo:"
+                        android:padding="3dp" />
+                    <TextView
+                        android:id="@+id/comienzo_num"
+                        android:text="---"
+                        android:padding="3dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Cantidad fotografías:"
+                        android:padding="3dp"/>
+                    <TextView
+                        android:id="@+id/cantfot_num"
+                        android:text="---"
+                        android:padding="3dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Intervalo:"
+                        android:padding="3dp"/>
+                    <TextView
+                        android:id="@+id/intervalo_num"
+                        android:text="---"
+                        android:padding="3dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"/>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
