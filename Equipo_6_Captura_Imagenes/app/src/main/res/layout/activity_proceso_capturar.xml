@@ -15,11 +15,28 @@
         android:orientation="vertical"
         android:padding="25dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Cámara (Vista Previa)" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Cámara (Vista Previa)" />
+
+            <ImageButton
+                android:id="@+id/btn_actualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#3F51B5"
+                android:onClick="actualizar"
+                app:srcCompat="@drawable/ic_baseline_refresh_24"
+                tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/layout"
@@ -57,15 +74,15 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/contador_intervalo"
+                android:id="@+id/btn_intervalo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
                 android:drawableRight="@drawable/ic_baseline_alarm_24"
                 android:onClick="probarContadores"
-                android:text="Contadores"
-                android:textSize="9sp" />
+                android:text="Preparado"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
