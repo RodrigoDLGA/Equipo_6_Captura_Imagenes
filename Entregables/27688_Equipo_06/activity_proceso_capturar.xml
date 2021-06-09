@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProcesoCapturar"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="#feccff"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Cámara (Vista Previa)" />
+
+            <ImageButton
+                android:id="@+id/btn_actualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#3F51B5"
+                android:onClick="actualizar"
+                app:srcCompat="@drawable/ic_baseline_refresh_24"
+                tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <SurfaceView
+                android:id="@+id/surfaceView"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/estado_textv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Estado: ---"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/segundos_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0 seg."
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_intervalo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
+                android:drawableRight="@drawable/ic_baseline_alarm_24"
+                android:onClick="probarContadores"
+                android:text="Preparado"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_fotosRestantes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="fotografía(s) restantes" />
+
+            <TextView
+                android:id="@+id/tv_finaliza"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Finaliza en: -" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="Comienzo:" />
+
+                    <TextView
+                        android:id="@+id/comienzo_num"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="3dp"
+                        android:text="---" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="Cantidad fotografías:" />
+
+                    <TextView
+                        android:id="@+id/cantfot_num"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="3dp"
+                        android:text="---" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="Intervalo (seg):" />
+
+                    <TextView
+                        android:id="@+id/intervalo_num"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="3dp"
+                        android:text="---" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

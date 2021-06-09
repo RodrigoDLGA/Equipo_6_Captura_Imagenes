@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".75"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#fccfa9"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccione una opción:"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/seleccionar_ex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar proyecto existente"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/crear_nuevo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crear nuevo proyecto"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinner_proyectos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </Spinner>
+
+        <EditText
+            android:id="@+id/nombre_proyecto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre proyecto"
+            android:inputType="textPersonName"
+            android:visibility="gone"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <Button
+            android:id="@+id/btn_siguiente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:onClick="siguiente"
+            android:text="Siguiente" />
+    </LinearLayout>
+</LinearLayout>
